@@ -1,7 +1,7 @@
 const db = require('../config/db');
 
 class User {
-    // Get all users
+// Get all users
     static async getAllUsers() {
         try {
             const [rows] = await db.query('SELECT * FROM users');
@@ -11,7 +11,7 @@ class User {
         }
     }
 
-    // Get user by ID
+// Get user by ID
     static async getUserById(id) {
         try {
             const [rows] = await db.query('SELECT * FROM users WHERE id = ?', [id]);
@@ -21,7 +21,7 @@ class User {
         }
     }
 
-    // Create a new user
+// Create a new user
     static async createUser(name, email) {
         try {
             const [result] = await db.query('INSERT INTO users (name, email) VALUES (?, ?)', [name, email]);
@@ -31,7 +31,7 @@ class User {
         }
     }
 
-    // Update a user
+// Update a user
     static async updateUser(id, name, email) {
         try {
             const [result] = await db.query('UPDATE users SET name = ?, email = ? WHERE id = ?', [name, email, id]);
