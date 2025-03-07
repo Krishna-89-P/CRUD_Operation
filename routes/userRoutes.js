@@ -4,7 +4,7 @@ const UserController = require('../controllers/userController'); // Ensure this 
 const router = express.Router();
 
 // Create a new user
-router.post('/', UserController.create); // Ensure this matches `/api/users`
+router.post('/', UserController.create);
 
 // Get all users
 router.get('/', UserController.getAll);
